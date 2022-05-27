@@ -54,6 +54,7 @@ export default {
 
 header{
     background: linear-gradient($bg-blue, $bg-dark-4);
+    padding-bottom: 7.5rem;
     .logo{
         padding: 10px;
     }

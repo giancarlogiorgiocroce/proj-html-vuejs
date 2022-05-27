@@ -1,12 +1,12 @@
 <template>
 <div class="box">
     <div class="titles">
-        <h6 class="pretext">{{jumboPreText}}</h6>
-        <h1 class="bold">{{jumboFirstText}}</h1>
-        <h1 class="thin">{{jumboSecondText}}</h1>
-        <h1 class="bold">{{jumboThirdText}}</h1>
+        <p v-if="jumboPreText" class="pretext">{{jumboPreText}}</p>
+        <h1 v-if="jumboFirstText" class="bold">{{jumboFirstText}}</h1>
+        <h1 v-if="jumboSecondText" class="thin">{{jumboSecondText}}</h1>
+        <h1 v-if="jumboThirdText" class="bold">{{jumboThirdText}}</h1>
     </div>
-    <p>{{jumboDescription}}</p>
+    <p class="description">{{jumboDescription}}</p>
     <div class="btn-container">
         <span>BTNCOMP</span>
         <span>BTNCOMP</span>
@@ -36,11 +36,12 @@ export default {
     width: 30vw;
     .titles{
         color: white;
+        text-transform: capitalize;
         h1.bold{
             font-weight: bolder;
         }
     }
-    p{
+    .description{
         color: $txt-blue;
         margin: 2rem 0;
     }
