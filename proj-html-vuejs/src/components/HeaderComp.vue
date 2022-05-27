@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-6 d-flex align-items-center">
-                <JumboCard />
+                <JumboCard :jumboFirstText="this.jumboOne" :jumboSecondText="this.jumboTwo" :jumboThirdText="this.jumboThree" :jumboDescription="this.jumboFour"/>
             </div>
             <div class="col-6">
                 <img src="../assets/images/header.png" alt="header.png">
@@ -38,7 +38,12 @@ export default {
                 "Blog",
                 "Contact",
                 "Portfolio",
-            ]
+            ],
+            // Props per JumboCard
+            jumboOne: "Business Planning",
+            jumboTwo:"Digital Technology",
+            jumboThree: "Modern Solution !",
+            jumboFour: "When, while the lovely valley teems with vapour around meand the meridian sun strikes the upper surface .",
         };
     },
 }
@@ -55,6 +60,10 @@ header{
     a{
         color: white;
         margin: 0 .5rem;
+        &:hover,
+        &:focus{
+            color: $txt-red;
+        }
     }
     .my-btn{
         margin: 0 2rem;
