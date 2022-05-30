@@ -5,7 +5,7 @@
     <section class="slider"></section>
     <MainPricing />
     <MainLatest />
-    <section class="reviews"></section>
+    <MainReviews />
 </main>
 </template>
 
@@ -14,8 +14,9 @@ import MainJumbo from './main_comps/MainJumbo.vue';
 import MainServices from './main_comps/MainServices.vue';
 import MainPricing from './main_comps/MainPricing.vue';
 import MainLatest from './main_comps/MainLatest.vue';
+import MainReviews from './main_comps/MainReviews.vue';
 export default {
-    components: { MainJumbo, MainServices, MainPricing, MainLatest }
+    components: { MainJumbo, MainServices, MainPricing, MainLatest, MainReviews }
 }
 </script>
 

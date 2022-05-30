@@ -24,12 +24,14 @@ export default {
 
 div{
     text-align: center;
-    .red-title,
-    h1{
+    .red-title, h1{
         text-transform: capitalize;
     }
     .red-title{
         color: $txt-red;
+    }
+    h1{
+        margin-bottom: 2rem;
     }
     .description{
         color: $txt-grey;

@@ -1,7 +1,7 @@
 <template>
 <section class="container justify-content-center">
     <div class="row title justify-content-center">
-        <div class="col-4">
+        <div class="col-6">
             <TripleTitle 
                 :redText="this.tripleTitleOne"
                 :strongText="this.tripleTitleTwo"
@@ -19,7 +19,7 @@
                 <img :src="el.service_img" :alt="el.service_title">
             </div>
             <div>
-                <h5>{{el.service_title}}</h5>
+                <h5><strong>{{el.service_title}}</strong></h5>
                 <p>{{el.service_description}}</p>
             </div>
         </div>
@@ -78,8 +78,9 @@ section{
 .cards{
     .img_container{
         height: 40%;
+        margin-top: 5rem;
         img{
-            height: 100%;
+            width: 100%;
         }
     }
     .button{
