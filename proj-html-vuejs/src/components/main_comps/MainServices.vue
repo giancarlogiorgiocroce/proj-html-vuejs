@@ -3,10 +3,11 @@
     <div class="row title justify-content-center">
         <div class="col-4">
             <TripleTitle 
-                redText="our services"
-                strongText="what"
-                regularText="we do"
-                descriptionText="When, while the lovely valley teems with vapour around meand the"/>
+                :redText="this.tripleTitleOne"
+                :strongText="this.tripleTitleTwo"
+                :regularText="this.tripleTitleThree"
+                :descriptionText="this.tripleTitleFour"
+            />
         </div>
     </div>
 
@@ -58,7 +59,12 @@ export default {
                     service_title: "Brending Strategy",
                     service_description: "When, while the lovely valley teems with vapour around meand the meridian sun strikes the upper",
                 },
-            ]
+            ],
+            // Props per TripleTitle
+            tripleTitleOne: "our services",
+            tripleTitleTwo:"what",
+            tripleTitleThree: "we do",
+            tripleTitleFour: "When, while the lovely valley teems with vapour around meand the",
         };
     },
     components: { TripleTitle }

@@ -53,7 +53,7 @@ export default {
 @import '../assets/style/vars';
 
 header{
-    background: linear-gradient($bg-blue, $bg-dark-4);
+    background: linear-gradient($bg-blue, $bg-dark-4 50%);
     padding-bottom: 7.5rem;
     .logo{
         padding: 10px;

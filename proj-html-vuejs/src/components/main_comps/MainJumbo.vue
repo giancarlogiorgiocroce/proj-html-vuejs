@@ -7,7 +7,12 @@
                 <img class="men" src="../../assets/images/men-data.png" alt="men-data.png">
             </div>
             <div class="col-6 d-flex align-items-center">
-                <JumboCard :jumboPreText="this.jumboOne" :jumboFirstText="this.jumboTwo" :jumboSecondText="this.jumboThree" :jumboDescription="this.jumboFour"/>
+                <JumboCard
+                    :jumboPreText="this.jumboOne" 
+                    :jumboFirstText="this.jumboTwo"
+                    :jumboSecondText="this.jumboThree"
+                    :jumboDescription="this.jumboFour"
+                />
             </div>
         </div>
     </div>
@@ -35,7 +40,7 @@ export default {
 @import '../../assets/style/vars';
 
 section{
-    background: linear-gradient($bg-blue, $bg-dark-4);
+    background: linear-gradient($bg-blue, $bg-dark-4 50%);
     padding: 3rem;
     .image{
         padding: 4rem;
