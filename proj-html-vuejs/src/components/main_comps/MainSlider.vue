@@ -35,17 +35,13 @@
                 </div>
             </div>
         </Slide>
-
-        <template #addons>
-            <Navigation />
-        </template>
     </Carousel>
 </section>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { Carousel, Navigation, Slide } from 'vue3-carousel';
+import { Carousel, Slide } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
     
@@ -54,14 +50,14 @@ import TripleTitle from '../utils_comp/TripleTitle.vue';
 export default defineComponent({
     name: 'WrapAround',
     components: { TripleTitle, Carousel,
-    Slide,
-    Navigation,},
+    Slide,},
     data(){
         return{
             // Props per TripleTitle
             tripleTitleOne: "portfolio",
             tripleTitleTwo:"latest",
             tripleTitleThree: "work",
+            slide: 2,
             // Dati cards
             cardsArray:[
                 {
@@ -109,8 +105,8 @@ export default defineComponent({
     },
     methods:{
         goBack(){
-            this.currentIndex -= 1;
-            console.log(this.currentIndex);
+            this.slide -= 1;
+            console.log(this.slide);
         }
     },
     computed:{
@@ -130,16 +126,12 @@ export default defineComponent({
 @import '../../assets/style/vars';
 section{
     margin: 3rem auto;
-    .cards-container{
-        margin: 3rem 0;
-        overflow: hidden;
-    }
     .card{
-        width: 75%;
-        margin: 0 3%;
+        width: 80%;
+        margin: 3rem 3%;
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 0 50px 10px $bg-grey;
+        box-shadow: 0 0 20px 1px $bg-grey;
         flex-shrink: 0;
         .img-container{
             width: 100%;

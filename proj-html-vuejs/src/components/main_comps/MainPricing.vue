@@ -178,6 +178,7 @@ export default {
 section{
     background: linear-gradient($dark-blue, $dark-blue-2 70%, white 70%);
     margin: 3rem auto 6rem;
+    padding-top: 3rem;
     .first-row{
         margin: 50px 0;
         div{
@@ -192,6 +193,7 @@ section{
     width: 22vw;
     border-radius: 5%;
     position: relative;
+    box-shadow: 0 1px 5px 0.1px rgb(177, 177, 177);
 
     .titles{
         margin: 1rem 0;
@@ -205,7 +207,7 @@ section{
     }
     .price-shadow{
         position: absolute;
-        bottom: 54%;
+        bottom: 48%;
         left: 19%;
         font-size: 260px;
         opacity: (0.2);

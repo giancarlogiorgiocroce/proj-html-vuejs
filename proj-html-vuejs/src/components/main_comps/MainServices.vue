@@ -26,7 +26,6 @@
     </div>
 
     <div class="row button justify-content-center">
-        <div class="col-2">
             <ButtonsComp
                 :deg="this.BtnDeg"
                 :color1="this.BtnColor1"
@@ -34,7 +33,6 @@
                 :text="this.BtnText"
                 :textColor="this.BtnTextColor"
             />
-        </div>
     </div>
 </section>
 </template>
@@ -99,9 +97,10 @@ section{
     }
 }
 .button.row{
-    margin: 5rem 0;
+    margin: 5rem auto;
+    width: 150px;
     div{
-        box-shadow: 0 0 75px 1px rgb(249, 99, 107);
+        box-shadow: 0 0 15px 1px rgb(249, 99, 107);
     }
 }
 </style>
