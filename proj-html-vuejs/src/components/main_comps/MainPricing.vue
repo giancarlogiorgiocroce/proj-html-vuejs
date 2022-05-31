@@ -1,16 +1,16 @@
 <template>
 <section>
-    <div class="first-row">
-        <div>
-            <TripleTitle 
-                :redText="this.tripleTitleOne"
-                :strongText="this.tripleTitleTwo"
-                :regularText="this.tripleTitleThree"
-                :descriptionText="this.tripleTitleFour"
-            />
-        </div>
-    </div>
     <div class="container my-container">
+        <div class="first-row">
+            <div>
+                <TripleTitle 
+                    :redText="this.tripleTitleOne"
+                    :strongText="this.tripleTitleTwo"
+                    :regularText="this.tripleTitleThree"
+                    :descriptionText="this.tripleTitleFour"
+                />
+            </div>
+        </div>
         <div class="second row justify-content-evenly">
             <div
                 class="col-3 my-card text-center"
@@ -37,7 +37,19 @@
                     </p>
                 </div>
                 <div class="btn-container">
-                    BTN COMP
+                    <ButtonsComp
+                        v-if="i%2"
+                        :text="this.BtnText"
+                        :textColor="this.BtnColor2"
+                    />
+                    <ButtonsComp
+                        v-else
+                        :deg="this.BtnDeg"
+                        :color1="this.BtnColor1"
+                        :color2="this.BtnColor2"
+                        :text="this.BtnText"
+                        :textColor="this.BtnTextColor"
+                    />
                 </div>
             </div>
         </div>
@@ -48,8 +60,9 @@
 
 <script>
 import TripleTitle from '../utils_comp/TripleTitle.vue';
+import ButtonsComp from '../utils_comp/ButtonsComp.vue';
 export default {
-    components: { TripleTitle },
+    components: { TripleTitle, ButtonsComp },
     data(){
         return{
             // Props per TripleTitle
@@ -57,6 +70,12 @@ export default {
             tripleTitleTwo:"our",
             tripleTitleThree: "pricing",
             tripleTitleFour: "When, while the lovely valley teems with vapour around meand the meridian sun strikes the upper surface .",
+            // Props per ButtonsComp
+            BtnDeg: "180deg",
+            BtnColor1: "rgb(182, 36, 110)", 
+            BtnColor2: "rgb(249, 99, 107)",
+            BtnText: "order now     →",
+            BtnTextColor: "white",
             // Data per card prodotti
             functionalitiesArray:[
                 {
@@ -157,17 +176,14 @@ export default {
 @import '../../assets/style/vars';
 
 section{
+    background: linear-gradient($dark-blue, $dark-blue-2 70%, white 70%);
+    margin: 3rem auto 6rem;
     .first-row{
-        background: linear-gradient(90deg, $bg-blue, $bg-dark-4);
-        padding: 3rem 0 21rem;
+        margin: 50px 0;
         div{
             margin: 0 15%;
             color: white;
         }
-    }
-
-    .my-container{
-        transform: translate(0, -55%);
     }
 }
 
@@ -189,8 +205,8 @@ section{
     }
     .price-shadow{
         position: absolute;
-        bottom: 40%;
-        right: 0;
+        bottom: 54%;
+        left: 19%;
         font-size: 260px;
         opacity: (0.2);
 
@@ -224,6 +240,11 @@ section{
         span.thin{
             color: #191919;
         }
+    }
+    .btn-container{
+        width: 200px;
+        margin: 3rem auto;
+
     }
 }
 

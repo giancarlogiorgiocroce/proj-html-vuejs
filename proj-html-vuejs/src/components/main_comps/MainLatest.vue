@@ -23,7 +23,12 @@
                 <h6>{{el.title}}</h6>
                 <p>{{el.description}}</p>
             </div>
-            <div>BTNCOMP</div>
+            <div class="btn-container">
+                <ButtonsComp
+                    :text="this.BtnText"
+                    :textColor="this.BtnTextColor"
+                />
+            </div>
         </div>
     </div>
 </section>
@@ -31,8 +36,9 @@
 
 <script>
 import TripleTitle from '../utils_comp/TripleTitle.vue';
+import ButtonsComp from '../utils_comp/ButtonsComp.vue';
 export default {
-    components: { TripleTitle },
+    components: { TripleTitle, ButtonsComp },
     data(){
         return{
             // Props per TripleTitle
@@ -40,6 +46,9 @@ export default {
             tripleTitleTwo:"latest",
             tripleTitleThree: "posts",
             tripleTitleFour: "When, while the lovely valley teems with vapour around meand the meridian sun strikes the upper surface .",
+            // Props per ButtonsComp
+            BtnText: "Read more",
+            BtnTextColor: "rgb(127, 127, 127)",
             // Data per latest posts
             latestPostArray:[
                 {
@@ -81,13 +90,13 @@ export default {
     .row.second{
         .my-card{
             color:white;
-            background: linear-gradient(135deg, $bg-dark-4, $bg-blue 100%);
+            background: linear-gradient(135deg, $dark-blue, $dark-blue-2);
             padding: 3rem 1rem 2rem;
-            margin: 1rem;
+            margin: 1.5rem;
             border-radius: 25px;
             .text{
                 width: 85%;
-                margin-bottom: 1rem;
+                margin: 0 1rem 1rem 0;
             }
             p{
                 font-size: 13px;
@@ -96,6 +105,9 @@ export default {
             h6{
                 margin: 1rem 0;
                 font-weight: bold;
+            }
+            .btn-container{
+                width: 150px;
             }
         }
         .my-card.active{
@@ -113,6 +125,9 @@ export default {
                 height: 105%;
                 border-radius: 25px;
                 filter: brightness(0.7);
+            }
+            .btn-container{
+                margin-right: -1rem;
             }
         }
     }

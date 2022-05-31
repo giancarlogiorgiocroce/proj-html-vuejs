@@ -26,6 +26,7 @@ export default {
     components: { JumboCard },
     data(){
         return{
+            // Props per JumboText
             jumboOne: "Start Your Project",
             jumboTwo:"Grow Your Business",
             jumboThree: "With our strategy",
@@ -40,7 +41,7 @@ export default {
 @import '../../assets/style/vars';
 
 section{
-    background: linear-gradient($bg-blue, $bg-dark-4 50%);
+    background: linear-gradient($dark-blue, $dark-blue-2);
     padding: 3rem;
     .image{
         padding: 4rem;

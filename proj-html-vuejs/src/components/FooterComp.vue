@@ -7,9 +7,17 @@
                 <p>When, while the lovely valley teems with vapour around meand the meridian sun strikes the upper surface .</p>
             </div>
             <div class="col-5 d-flex justify-content-end align-items-center">
-                <div class="email-container">
+                <div class="email-container d-flex">
                 <input type="text">
-                    BTN BLU 
+                    <div class="btn-container">
+                        <ButtonsComp
+                            :deg="this.BtnDeg"
+                            :color1="this.BtnColor1"
+                            :color2="this.BtnColor2"
+                            :text="this.BtnText"
+                            :textColor="this.BtnTextColor"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,13 +89,20 @@
 </template>
 
 <script>
+import ButtonsComp from './utils_comp/ButtonsComp.vue'
 
 export default {
-    data(){
-        return{
-
-        }
-    }
+    data() {
+        return {
+            // Props per ButtonsComp
+            BtnDeg: "90deg",
+            BtnColor1: "rgb(3, 168, 212)", 
+            BtnColor2: "rgb(32, 63, 131)",
+            BtnText: "subscribe",
+            BtnTextColor: "white",
+        };
+    },
+    components: { ButtonsComp }
 }
 </script>
 
@@ -121,6 +136,9 @@ footer{
             padding: 7.5px;
             width: 100%;
             background-color: white;
+        }
+        .btn-container{
+            width: 150px;
         }
     }
 
@@ -179,8 +197,8 @@ footer{
             width: 2.5vw;
             border-radius: 50%;
             margin-top: 5px;
-            i{
-                translate: rotateY(180deg);
+            .fa-comment{
+                transform: rotateY(180deg);
             }
         }
     }

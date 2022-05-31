@@ -27,7 +27,13 @@
 
     <div class="row button justify-content-center">
         <div class="col-2">
-            btn comp
+            <ButtonsComp
+                :deg="this.BtnDeg"
+                :color1="this.BtnColor1"
+                :color2="this.BtnColor2"
+                :text="this.BtnText"
+                :textColor="this.BtnTextColor"
+            />
         </div>
     </div>
 </section>
@@ -35,8 +41,9 @@
 
 <script>
 import TripleTitle from '../utils_comp/TripleTitle.vue';
+import ButtonsComp from '../utils_comp/ButtonsComp.vue';
 export default {
-    components: { TripleTitle },
+    components: { TripleTitle, ButtonsComp },
     data() {
         return {
             cardInfoArray: [
@@ -66,6 +73,13 @@ export default {
             tripleTitleTwo:"what",
             tripleTitleThree: "we do",
             tripleTitleFour: "When, while the lovely valley teems with vapour around meand the",
+
+            // Props per ButtonsComp
+            BtnDeg: "135deg",
+            BtnColor1: "rgb(182, 36, 110)", 
+            BtnColor2: "rgb(249, 99, 107)",
+            BtnText: "view all services",
+            BtnTextColor: "white",
         };
     },
 }
@@ -83,10 +97,11 @@ section{
             width: 100%;
         }
     }
-    .button{
-        div{
-            box-shadow: 5px 5px 5px red;            
-        }
+}
+.button.row{
+    margin: 5rem 0;
+    div{
+        box-shadow: 0 0 75px 1px rgb(249, 99, 107);
     }
 }
 </style>
