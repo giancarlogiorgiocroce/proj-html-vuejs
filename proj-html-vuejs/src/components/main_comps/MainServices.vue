@@ -34,8 +34,9 @@
 </template>
 
 <script>
-import TripleTitle from '../utils_comp/TripleTitle.vue'
+import TripleTitle from '../utils_comp/TripleTitle.vue';
 export default {
+    components: { TripleTitle },
     data() {
         return {
             cardInfoArray: [
@@ -67,7 +68,6 @@ export default {
             tripleTitleFour: "When, while the lovely valley teems with vapour around meand the",
         };
     },
-    components: { TripleTitle }
 }
 </script>
 

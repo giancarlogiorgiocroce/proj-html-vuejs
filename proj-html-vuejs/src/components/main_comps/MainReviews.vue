@@ -35,7 +35,6 @@
                 <p class="name"><strong>{{el.name}}</strong></p>
                 <p class="role">{{el.role}}</p>
             </div>
-
         </div>
     </div>
     <div class="row third">
