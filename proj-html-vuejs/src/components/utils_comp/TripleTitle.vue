@@ -1,10 +1,10 @@
 <template>
 <div>
-    <p class="red-title">{{redText}}</p>
-    <h1>
+    <p v-if="redText" class="red-title">{{redText}}</p>
+    <h1 v-if="strongText || reguralText">
         <strong>{{strongText}}</strong> {{regularText}}
     </h1>
-    <p class="description">{{descriptionText}}</p>
+    <p v-if="descriptionText" class="description">{{descriptionText}}</p>
 </div>
 </template>
 
