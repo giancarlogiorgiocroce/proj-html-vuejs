@@ -8,15 +8,16 @@
             :regularText="this.tripleTitleThree"
         />
         <div class="icon-container">
-            <div @click="goBack()" class="previus">
+            <!-- <div @click="goBack()" class="previus">
                 <i class="fas fa-arrow-left"></i>
             </div>
             <div class="next">
                 <i class="fas fa-arrow-right"></i>
-            </div>
+            </div> -->
         </div>
     </div>
-    <Carousel :items-to-show="3.5" :wrap-around="true">
+    <div class="carousel">
+        <Carousel :items-to-show="3.5" :wrap-around="true">
         <Slide v-for="slide in 8" :key="slide">
             <div class="carousel__item d-flex justify-content-center align-items-center">
                 <div
@@ -35,13 +36,20 @@
                 </div>
             </div>
         </Slide>
-    </Carousel>
+
+        <template #addons>
+            <Pagination />
+            <Navigation />
+        </template>
+        </Carousel>
+    </div>
+    
 </section>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { Carousel, Slide } from 'vue3-carousel';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
     
@@ -49,15 +57,13 @@ import TripleTitle from '../utils_comp/TripleTitle.vue';
 
 export default defineComponent({
     name: 'WrapAround',
-    components: { TripleTitle, Carousel,
-    Slide,},
+    components: { TripleTitle, Carousel, Slide, Pagination, Navigation},
     data(){
         return{
             // Props per TripleTitle
             tripleTitleOne: "portfolio",
             tripleTitleTwo:"latest",
             tripleTitleThree: "work",
-            slide: 2,
             // Dati cards
             cardsArray:[
                 {
@@ -104,9 +110,9 @@ export default defineComponent({
         }
     },
     methods:{
-        goBack(){
-            this.slide -= 1;
-            console.log(this.slide);
+        goBack(i){
+            i = i-1;
+            console.log(i);
         }
     },
     computed:{
@@ -149,6 +155,10 @@ section{
             color: white;
         }
     }
+}
+.carousel{
+    max-width: 97vw;
+    margin: 0 auto;
 }
 
 </style>
